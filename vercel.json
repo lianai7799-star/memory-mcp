@@ -1,9 +1,19 @@
 {
   "version": 2,
-  "rewrites": [
+  "builds": [
     {
-      "source": "/.well-known/oauth-authorization-server",
-      "destination": "/api/well-known/oauth-authorization-server"
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/.well-known/oauth-authorization-server",
+      "dest": "/api/well-known/oauth-authorization-server"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
     }
   ]
 }
