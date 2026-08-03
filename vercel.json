@@ -8,6 +8,10 @@
   ],
   "routes": [
     {
+      "src": "/.well-known/oauth-authorization-server",
+      "dest": "/api/well-known/oauth-authorization-server"
+    },
+    {
       "src": "/api/(.*)",
       "dest": "/api/$1"
     }
